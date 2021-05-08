@@ -28,17 +28,18 @@ class CryptoAdapter : RecyclerView.Adapter<CryptoAdapter.CryptoVH>() {
             RecyclerView.ViewHolder(binding.root), View.OnClickListener{
 
         fun bind(cryptoResponseItem: CryptoResponseItem){
-            binding.name.text = "NAME : " + cryptoResponseItem.name
+            binding.name.text =  cryptoResponseItem.name
             binding.precio.text ="PRICE : " + cryptoResponseItem.price
             binding.symbol.text ="SYMBOL : " +cryptoResponseItem.symbol
             binding.rank.text = "RANK : "+ cryptoResponseItem.rank
             binding.price.text ="PRICE STATUS : " +cryptoResponseItem.priceDate
 
 
-            Glide.with(binding.imageViewLogo)
-                .load(cryptoResponseItem.logoUrl)
-                .centerInside()
-                .into(binding.imageViewLogo)
+        binding.imageViewLogo.loadSvg(
+            cryptoResponseItem.logoUrl
+        )
+
+
             itemView.setOnClickListener ( this )
 
         }
