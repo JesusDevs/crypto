@@ -1,5 +1,6 @@
 package com.example.crypto.remote
 
+import com.example.crypto.pojo.CryptoDetailItem
 import com.example.crypto.pojo.CryptoResponseItem
 import retrofit2.Response
 import retrofit2.http.GET
@@ -11,5 +12,7 @@ interface ICryptoService {
     suspend fun getCrypto(): Response<List<CryptoResponseItem>>
 
 
+    @GET("details/")
+    suspend fun getCryptoDetail() : Response<List<CryptoDetailItem>>
 
 }

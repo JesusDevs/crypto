@@ -4,9 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.crypto.pojo.CryptoDetailItem
 import com.example.crypto.pojo.CryptoResponseItem
 
-@Database(entities = [CryptoResponseItem::class],version = 1)
+@Database(entities = [CryptoResponseItem::class , CryptoDetailItem::class],version = 1)
 abstract class CryptoDataBase:RoomDatabase() {
 
     abstract fun getCryptoDao( ):CryptoDao

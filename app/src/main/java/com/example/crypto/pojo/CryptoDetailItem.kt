@@ -1,15 +1,17 @@
 package com.example.crypto.pojo
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "cryptDetail")
 data class CryptoDetailItem(
     @SerializedName("circulating_supply")
     val circulatingSupply: String,
     @SerializedName("currency")
     val currency: String,
-    @SerializedName("1d")
-    val d: D,
+
     @SerializedName("first_candle")
     val firstCandle: String,
     @SerializedName("first_order_book")
@@ -21,6 +23,7 @@ data class CryptoDetailItem(
     @SerializedName("high_timestamp")
     val highTimestamp: String,
     @SerializedName("id")
+    @PrimaryKey
     val id: String,
     @SerializedName("logo_url")
     val logoUrl: String,
